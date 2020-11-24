@@ -1,1 +1,1 @@
-# This is the gitlab repositories for the exercise on github collaboration
+# This is the gitlab repositories for the exercise on github collaboration for 2020
