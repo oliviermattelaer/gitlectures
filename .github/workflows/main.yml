@@ -1,9 +1,9 @@
 name: auto update branch for mission p3_04_pull
 on:
   push:
-     branch:
+     branches:
        - master
-     path:
+     paths:
        - product.list
 
 jobs:
@@ -13,10 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Modifiy the specific files using scripts
-        run: echo "compas 5 " >> product.list
+        run: echo "I have succeed level 1 " >> status
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-          add: 'product.list'
+          add: status
           author_name: 'oliviermattelaer'
           author_email: 'olivier.mattelaer@uclouvain.be'
           default_author: github_actions
@@ -32,5 +32,5 @@ jobs:
           pathspec_error_handling: ignore
          # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
          # Default: true
-          push: false
+          push: true
 
