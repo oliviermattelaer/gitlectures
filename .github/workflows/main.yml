@@ -12,31 +12,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
-	
       - name: Modifiy the specific files using scripts
         run: echo "compas 5 " >> product.list
-
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-         add: 'product.list'
-	 author_name: oliviermattelaer
-	 author_email: olivier.mattelaer@uclouvain.be
-         default_author: github_actions
+          add: 'product.list'
+          author_name: 'oliviermattelaer'
+          author_email: 'olivier.mattelaer@uclouvain.be'
+          default_author: github_actions
          # Default: --tags --force
-         fetch: false
-
+          fetch: false
          # The message for the commit.
          # Default: 'Commit from GitHub Actions (name of the workflow)'
-         message: 'Commit from GitHub Actions (setup next mission)'
-
+          message: 'Commit from GitHub Actions (setup next mission)'
          # If this input is set, the action will push the commit to a new branch with this name.
          # Default: ''
          #new_branch: custom-new-branch
-
          # Default: ignore
-         pathspec_error_handling: ignore
-
+          pathspec_error_handling: ignore
          # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
          # Default: true
-         push: false
+          push: false
 
