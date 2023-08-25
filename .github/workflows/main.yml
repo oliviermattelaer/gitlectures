@@ -13,6 +13,8 @@ jobs:
   setup_p3_04_pull:
     runs-on: ubuntu-latest
     steps:
+      - name: NEED TO RUN
+        run: echo "need to run is on $torun"
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
         if: env.torun
