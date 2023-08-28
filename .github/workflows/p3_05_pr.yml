@@ -1,6 +1,6 @@
 name: auto update branch for mission p3_04_pull
 on:
-  pull_request:
+  pull_request_target:
      branches:
        - master
 
