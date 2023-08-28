@@ -17,7 +17,7 @@ jobs:
         with:
           message: |
             Thanks for your pull request and updating the list of file in sold out.
-	    Before incorporating your change could you remove the Excalibur sword out of that file?
-	    Thanks a lot
-	    The bot of olivier
+            Before incorporating your change could you remove the Excalibur sword out of that file?
+            Thanks a lot,
+            The bot of the game
 
