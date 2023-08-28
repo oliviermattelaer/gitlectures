@@ -5,6 +5,7 @@ on:
        - master
      paths:
        - SOLDOUT_waiting_for_stock.list
+     types: opened
 
 jobs:
   example_comment_pr:
@@ -14,14 +15,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Read file content
-        id: package
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: "./SOLDOUT_waiting_for_stock.list"
+      #- name: Read file content
+      #  id: package
+      #  uses: juliangruber/read-file-action@v1
+      #  with:
+      #    path: "./SOLDOUT_waiting_for_stock.list"
 
-      - name: debug
-        run: echo "${{ steps.package.outputs.content }}"
+      #- name: debug
+      #  run: echo "${{ steps.package.outputs.content }}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
@@ -31,5 +32,5 @@ jobs:
             Before incorporating your change could you remove the Excalibur sword out of that file?
             Thanks a lot,
             The bot of the game
-        if: contains( ${{ steps.package.outputs.contents }}, 'Excalibur')
+        #if: contains( ${{ steps.package.outputs.contents }}, 'Excalibur')
 
