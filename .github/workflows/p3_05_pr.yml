@@ -16,7 +16,7 @@ jobs:
 
       - name: Read file content
         id: package
-        uses: juliangruber/read-file-action
+        uses: juliangruber/read-file-action@v1
         with:
           path: "./SOLDOUT_waiting_for_stock.list"
 
