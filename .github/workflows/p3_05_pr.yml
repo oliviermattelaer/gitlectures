@@ -1,0 +1,23 @@
+name: auto update branch for mission p3_04_pull
+on:
+  pull_request:
+     branches:
+       - master
+
+jobs:
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: An example job to comment a PR
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            Thanks for your pull request and updating the list of file in sold out.
+	    Before incorporating your change could you remove the Excalibur sword out of that file?
+	    Thanks a lot
+	    The bot of olivier
+
