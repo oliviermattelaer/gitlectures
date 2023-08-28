@@ -20,8 +20,8 @@ jobs:
         with:
           path: "SOLDOUT_waiting_for_stock.list"
 
-      - name: debug
-        run: echo "${steps.read_file.outputs.contents}"
+      #- name: debug
+      #  run: echo "${steps.read_file.outputs.contents}"
 
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
