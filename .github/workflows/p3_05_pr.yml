@@ -3,6 +3,8 @@ on:
   pull_request_target:
      branches:
        - master
+     paths:
+       - SOLDOUT_waiting_for_stock.list
 
 jobs:
   example_comment_pr:
@@ -12,12 +14,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "SOLDOUT_waiting_for_stock.list"
+
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
+
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            Thanks for your pull request and updating the list of file in sold out.
+            Thanks for your pull request, in particular for  updating the list of sold out item.
             Before incorporating your change could you remove the Excalibur sword out of that file?
             Thanks a lot,
             The bot of the game
-
+        if: contains(steps.read_file.outputs.contents, 'Excalibur')
+	    

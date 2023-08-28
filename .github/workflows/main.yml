@@ -16,7 +16,7 @@ jobs:
       - name: NEED TO RUN
         run: echo "need to run is on $torun"
       - name: Checkout repository
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v3
         if: env.torun == 'true'
 
       - name: Modifiy the specific files using scripts
