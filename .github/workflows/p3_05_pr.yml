@@ -32,5 +32,6 @@ jobs:
             Before incorporating your change could you remove the Excalibur sword out of that file?
             Thanks a lot,
             The bot of the game
+            PS; After pushing your modified file, you can directly run "gsh check" to finish the level. 
         #if: contains( ${{ steps.package.outputs.contents }}, 'Excalibur')
 
